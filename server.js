@@ -25,7 +25,8 @@ server.on('request',function(req, res) {
 		}
 		else
 		{
-			console.log(url.parse(req.url,true));
+			var query = url.parse(req.url,true).query
+			console.log(query.name);
 	  		res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
 			res.write(data);
 		}
