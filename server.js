@@ -9,7 +9,7 @@ var server = http.createServer();
 server.on('request',function(req, res) {
 	
       console.log('il y a eu une requête');
-	  res.writeHead(200);
+	  res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
 	  res.end('Hello !! comment ça va ?');
 });
 
