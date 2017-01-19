@@ -15,11 +15,17 @@ server.on('request',function(req, res) {
 
 	  
 	  fs.readFile('index.html','utf-8',function(err,data){
-	 	if (err) throw err;
-	  	res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
-		res.write(data);
+	 	if (err) {
+			res.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});
+			res.write("Ce fichier n'existe pas");
+		}
+		else
+		{
+	  		res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
+			res.write(data);
+		}
 		res.end();
-	  
+	  	
 	  });
   
 });
