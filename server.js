@@ -8,9 +8,12 @@ var server = http.createServer();
 
 server.on('request',function(req, res) {
 	
-      console.log('il y a eu une requête');
+	  //récupération d'informations sur la requête :
+	  var userAgent= req.headers['user-agent'];
+      console.log('il y a eu une requête. Le client web utilisé est '+ userAgent );
+	
 	  res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
-	  res.end('Hello !! comment ça va ?');
+	  res.end('Hello world');
 });
 
 try {
