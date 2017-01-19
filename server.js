@@ -13,6 +13,17 @@ server.on('request',function(req, res) {
       console.log('il y a eu une requête. Le client web utilisé est '+ userAgent );
 	
 	  res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
+	  res.write('<!DOCTYPE html>'+
+      '<html>'+
+      '    <head>'+
+      '        <meta charset="utf-8" />'+
+      '        <title>Ma page Node.js !</title>'+
+      '    </head>'+ 
+      '    <body>'+
+      '     	<h1>Hello <strong>WORLD</strong> !</h1>'+
+      '    </body>'+
+      '</html>');
+      res.end();
 	  res.end('Hello world');
 });
 
