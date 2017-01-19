@@ -26,8 +26,10 @@ server.on('request',function(req, res) {
 		else
 		{
 			var query = url.parse(req.url,true).query
-			console.log(query.name);
+			var name = query.name;
 	  		res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
+			
+			data = data.replace('{{name}}',query.name); // la fonction replace permet de remplacer une chaine de caractères par une autre.
 			res.write(data);
 		}
 		res.end();
