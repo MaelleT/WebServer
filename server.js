@@ -11,7 +11,7 @@ server.on('request',function(req, res) {
 	
 	  //récupération d'informations sur la requête :
 	  var userAgent= req.headers['user-agent'];
-      console.log('il y a eu une requête. Le client web utilisé est '+ userAgent );
+      //console.log('il y a eu une requête. Le client web utilisé est '+ userAgent );
 
 	  
 	  fs.readFile('index.html','utf-8',function(err,data){
@@ -21,6 +21,7 @@ server.on('request',function(req, res) {
 		}
 		else
 		{
+			console.log(req.url);
 	  		res.writeHead(200,{'Content-Type':'text/html; charset=utf-8'});
 			res.write(data);
 		}
