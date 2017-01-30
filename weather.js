@@ -10,4 +10,10 @@ var request = http.get("http://api.openweathermap.org/data/2.5/weather?q=Nantes&
 									 
 							console.log(res.statusCode);
 	
-});
+							res.on('data',function(chunk){
+									console.log("Body :" + chunk);
+									}
+								  );
+	
+						}
+					  );
