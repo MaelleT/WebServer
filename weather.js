@@ -1,0 +1,1 @@
+// Application  : manipulation du résultat d'une requête
